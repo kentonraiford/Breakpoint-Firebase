@@ -8,28 +8,62 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
-
-    override func viewDidLoad() {
+class LoginVC: UIViewController
+{
+    
+    @IBOutlet weak var emailTxtField: InsetTextField!
+    @IBOutlet weak var passwordTextField: InsetTextField!
+    
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        emailTxtField.delegate = self
+        passwordTextField.delegate = self
+       
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func signInBtnWasPressed(_ sender: Any)
+    {
+        if emailTxtField.text != nil && passwordTextField.text != nil
+        { //If both the txt fields are not empty
+            AuthService.instance.loginUser(withEmail: emailTxtField.text!, andPassword: passwordTextField.text!, loginComplete:
+                { (success, loginError) in
+                    if success //The user was a nle to login successfully
+                    {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    else //If there is an error logging in.
+                    {
+                        print(String(describing: loginError?.localizedDescription))
+                    }
+                    
+                    AuthService.instance.registerUser(withEmail: self.emailTxtField.text!, andPassword: self.passwordTextField.text!, userCreationComplete: //If they don't have an account then there will be an error and we will attempt to create an account for them.
+                        { (success, registrationError) in
+                            if success //If we can successfully create a user
+                            {
+                                AuthService.instance.loginUser(withEmail: self.emailTxtField.text!, andPassword: self.passwordTextField.text!, loginComplete:
+                                    { (success, nil) in
+                                        self.dismiss(animated: true, completion: nil)
+                                        print("Login successful")
+                                    })
+                            }
+                            else //Could not register user
+                            {
+                                print(String(describing: registrationError?.localizedDescription))
+                            }
+                        })
+                })
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func closeBtnWasPressed(_ sender: Any)
+    {
+        dismiss(animated: true, completion: nil)
     }
-    */
+}
 
+extension LoginVC: UITextFieldDelegate
+{
+    
 }

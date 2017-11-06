@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		A812D97912702F2D7DCE0F39 /* Pods_breakpoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA350F0809411259CBE22382 /* Pods_breakpoint.framework */; };
 		CDCA2EAC1FAF85C300D9C52D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCA2EAB1FAF85C300D9C52D /* AppDelegate.swift */; };
-		CDCA2EAE1FAF85C300D9C52D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCA2EAD1FAF85C300D9C52D /* FirstViewController.swift */; };
-		CDCA2EB01FAF85C300D9C52D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCA2EAF1FAF85C300D9C52D /* SecondViewController.swift */; };
+		CDCA2EAE1FAF85C300D9C52D /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCA2EAD1FAF85C300D9C52D /* FeedVC.swift */; };
+		CDCA2EB01FAF85C300D9C52D /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCA2EAF1FAF85C300D9C52D /* GroupsVC.swift */; };
 		CDCA2EB31FAF85C300D9C52D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCA2EB11FAF85C300D9C52D /* Main.storyboard */; };
 		CDCA2EB51FAF85C300D9C52D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDCA2EB41FAF85C300D9C52D /* Assets.xcassets */; };
 		CDCA2EB81FAF85C300D9C52D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCA2EB61FAF85C300D9C52D /* LaunchScreen.storyboard */; };
@@ -28,8 +28,8 @@
 		CC9757E0FF41373C246D6E75 /* Pods-breakpoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-breakpoint.release.xcconfig"; path = "Pods/Target Support Files/Pods-breakpoint/Pods-breakpoint.release.xcconfig"; sourceTree = "<group>"; };
 		CDCA2EA81FAF85C300D9C52D /* breakpoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakpoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDCA2EAB1FAF85C300D9C52D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDCA2EAD1FAF85C300D9C52D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		CDCA2EAF1FAF85C300D9C52D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		CDCA2EAD1FAF85C300D9C52D /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		CDCA2EAF1FAF85C300D9C52D /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
 		CDCA2EB21FAF85C300D9C52D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDCA2EB41FAF85C300D9C52D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDCA2EB71FAF85C300D9C52D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -104,8 +104,8 @@
 		CDE78C2E1FAFAD430093E770 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CDCA2EAD1FAF85C300D9C52D /* FirstViewController.swift */,
-				CDCA2EAF1FAF85C300D9C52D /* SecondViewController.swift */,
+				CDCA2EAD1FAF85C300D9C52D /* FeedVC.swift */,
+				CDCA2EAF1FAF85C300D9C52D /* GroupsVC.swift */,
 				CDE78C371FB022BD0093E770 /* AuthVC.swift */,
 				CDE78C391FB022E70093E770 /* LoginVC.swift */,
 			);
@@ -277,12 +277,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDE78C381FB022BD0093E770 /* AuthVC.swift in Sources */,
-				CDCA2EB01FAF85C300D9C52D /* SecondViewController.swift in Sources */,
+				CDCA2EB01FAF85C300D9C52D /* GroupsVC.swift in Sources */,
 				CDE78C3A1FB022E70093E770 /* LoginVC.swift in Sources */,
 				CDE78C401FB027E40093E770 /* AuthService.swift in Sources */,
 				CDCA2EAC1FAF85C300D9C52D /* AppDelegate.swift in Sources */,
 				CDE78C3E1FB0267F0093E770 /* ShadowView.swift in Sources */,
-				CDCA2EAE1FAF85C300D9C52D /* FirstViewController.swift in Sources */,
+				CDCA2EAE1FAF85C300D9C52D /* FeedVC.swift in Sources */,
 				CDE78C3C1FB023290093E770 /* InsetTextField.swift in Sources */,
 				CDE78C361FAFAF950093E770 /* DataService.swift in Sources */,
 			);

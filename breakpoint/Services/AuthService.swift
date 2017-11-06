@@ -33,12 +33,12 @@ class AuthService
     {
         Auth.auth().signIn(withEmail: email, password: password)
         { (user, error) in
-            guard let user = user
-                else
-                {
-                    loginComplete(false, error)
-                    return
-                }
+            
+            if error != nil
+            {
+                loginComplete(false, error)
+                return
+            }
             loginComplete(true, error) //The user will be logged in.
         }
     }
