@@ -48,4 +48,18 @@ class DataService
     }
     
     
+    //Send the feed to firebase.
+    func uploadPost(withMessage message: String, forUID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool) -> ())
+    {
+        if groupKey != nil
+        {
+            //Send to groups REF
+        }
+        else //Pass message into feed
+        {
+            REF_FEED.childByAutoId().updateChildValues(["content": message, "senderId": uid]) //This will generate a unique identifier for every message that comes in. That's what we want because we don't need to give it a specific name because the specific uid of the message doesn't matter, but inside we are going to keep the uid of the user who wrote the message.
+            sendComplete(true)
+        }
+    }
+    
 }

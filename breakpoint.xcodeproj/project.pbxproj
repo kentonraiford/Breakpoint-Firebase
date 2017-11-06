@@ -21,6 +21,8 @@
 		CDE78C3C1FB023290093E770 /* InsetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE78C3B1FB023290093E770 /* InsetTextField.swift */; };
 		CDE78C3E1FB0267F0093E770 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE78C3D1FB0267F0093E770 /* ShadowView.swift */; };
 		CDE78C401FB027E40093E770 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE78C3F1FB027E40093E770 /* AuthService.swift */; };
+		CDE78C421FB043600093E770 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE78C411FB043600093E770 /* MeVC.swift */; };
+		CDE78C441FB048990093E770 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE78C431FB048990093E770 /* CreatePostVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		CDE78C3B1FB023290093E770 /* InsetTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetTextField.swift; sourceTree = "<group>"; };
 		CDE78C3D1FB0267F0093E770 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		CDE78C3F1FB027E40093E770 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CDE78C411FB043600093E770 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
+		CDE78C431FB048990093E770 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		DA350F0809411259CBE22382 /* Pods_breakpoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_breakpoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -108,6 +112,8 @@
 				CDCA2EAF1FAF85C300D9C52D /* GroupsVC.swift */,
 				CDE78C371FB022BD0093E770 /* AuthVC.swift */,
 				CDE78C391FB022E70093E770 /* LoginVC.swift */,
+				CDE78C411FB043600093E770 /* MeVC.swift */,
+				CDE78C431FB048990093E770 /* CreatePostVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -276,12 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE78C421FB043600093E770 /* MeVC.swift in Sources */,
 				CDE78C381FB022BD0093E770 /* AuthVC.swift in Sources */,
 				CDCA2EB01FAF85C300D9C52D /* GroupsVC.swift in Sources */,
 				CDE78C3A1FB022E70093E770 /* LoginVC.swift in Sources */,
 				CDE78C401FB027E40093E770 /* AuthService.swift in Sources */,
 				CDCA2EAC1FAF85C300D9C52D /* AppDelegate.swift in Sources */,
 				CDE78C3E1FB0267F0093E770 /* ShadowView.swift in Sources */,
+				CDE78C441FB048990093E770 /* CreatePostVC.swift in Sources */,
 				CDCA2EAE1FAF85C300D9C52D /* FeedVC.swift in Sources */,
 				CDE78C3C1FB023290093E770 /* InsetTextField.swift in Sources */,
 				CDE78C361FAFAF950093E770 /* DataService.swift in Sources */,
