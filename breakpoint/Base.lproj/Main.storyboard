@@ -526,7 +526,7 @@
                                     <constraint firstItem="N6M-qQ-bfC" firstAttribute="centerY" secondItem="Y0i-NL-oYn" secondAttribute="centerY" id="ySp-Jx-rGv"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Azo-rZ-bpF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="Azo-rZ-bpF">
                                 <rect key="frame" x="20" y="90" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Gzh-Z2-0JW"/>
