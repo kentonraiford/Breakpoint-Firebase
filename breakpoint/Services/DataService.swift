@@ -62,4 +62,28 @@ class DataService
         }
     }
     
+    
+    func getAllFeedMessages(handler: @escaping (_ messages: [Message]) -> ()) //We are going to pull datat from feed reference and pass data out of our closure.
+    {
+        
+        var messageArray = [Message]() //We are going to add the messages from below to our messageArray
+        
+        //Download every message from the Feed Array
+        REF_FEED.observeSingleEvent(of: .value, with:
+            { (feedMessageSnapshot) in
+                guard let feedMessageSnapshot = feedMessageSnapshot.children.allObjects as? [DataSnapshot] else { return } //Return all of the messages else if there are no messages, return and get out of the function.
+                
+                for message in feedMessageSnapshot
+                {
+                    let content = message.childSnapshot(forPath: "content").value as! String //We pull the content from the specific message dataSnapshot.
+                    let senderID = message.childSnapshot(forPath: "senderId").value as! String //We pull the userID from the specific message dataSnapshot.
+                    
+                    let message = Message(content: content, senderId: senderID) //Create a message using the data above.
+                    messageArray.append(message) //Append the message to the message array
+                }
+                
+                handler(messageArray) //Download all of our messages and append them into the messageArray and return the messageArray.
+            })
+    }
+    
 }
