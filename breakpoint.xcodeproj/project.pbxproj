@@ -12,6 +12,8 @@
 		CD3477401FB11643002B9DFF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD34773F1FB11643002B9DFF /* Message.swift */; };
 		CD3477421FB150F8002B9DFF /* CreateGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3477411FB150F8002B9DFF /* CreateGroupsVC.swift */; };
 		CD3477441FB154AD002B9DFF /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3477431FB154AD002B9DFF /* UserCell.swift */; };
+		CD3477461FB23812002B9DFF /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3477451FB23812002B9DFF /* GroupCell.swift */; };
+		CD3477481FB23C03002B9DFF /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3477471FB23C03002B9DFF /* Group.swift */; };
 		CDCA2EAC1FAF85C300D9C52D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCA2EAB1FAF85C300D9C52D /* AppDelegate.swift */; };
 		CDCA2EAE1FAF85C300D9C52D /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCA2EAD1FAF85C300D9C52D /* FeedVC.swift */; };
 		CDCA2EB01FAF85C300D9C52D /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCA2EAF1FAF85C300D9C52D /* GroupsVC.swift */; };
@@ -37,6 +39,8 @@
 		CD34773F1FB11643002B9DFF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		CD3477411FB150F8002B9DFF /* CreateGroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupsVC.swift; sourceTree = "<group>"; };
 		CD3477431FB154AD002B9DFF /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		CD3477451FB23812002B9DFF /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		CD3477471FB23C03002B9DFF /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		CDCA2EA81FAF85C300D9C52D /* breakpoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakpoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDCA2EAB1FAF85C300D9C52D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDCA2EAD1FAF85C300D9C52D /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				CDE78C3D1FB0267F0093E770 /* ShadowView.swift */,
 				CD34773D1FB11539002B9DFF /* FeedCell.swift */,
 				CD3477431FB154AD002B9DFF /* UserCell.swift */,
+				CD3477451FB23812002B9DFF /* GroupCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				CD34773F1FB11643002B9DFF /* Message.swift */,
+				CD3477471FB23C03002B9DFF /* Group.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,11 +306,13 @@
 				CDE78C461FB04C130093E770 /* UIViewExt.swift in Sources */,
 				CD34773E1FB11539002B9DFF /* FeedCell.swift in Sources */,
 				CDE78C421FB043600093E770 /* MeVC.swift in Sources */,
+				CD3477461FB23812002B9DFF /* GroupCell.swift in Sources */,
 				CDE78C381FB022BD0093E770 /* AuthVC.swift in Sources */,
 				CDCA2EB01FAF85C300D9C52D /* GroupsVC.swift in Sources */,
 				CDE78C3A1FB022E70093E770 /* LoginVC.swift in Sources */,
 				CDE78C401FB027E40093E770 /* AuthService.swift in Sources */,
 				CD3477421FB150F8002B9DFF /* CreateGroupsVC.swift in Sources */,
+				CD3477481FB23C03002B9DFF /* Group.swift in Sources */,
 				CD3477441FB154AD002B9DFF /* UserCell.swift in Sources */,
 				CDCA2EAC1FAF85C300D9C52D /* AppDelegate.swift in Sources */,
 				CDE78C3E1FB0267F0093E770 /* ShadowView.swift in Sources */,
