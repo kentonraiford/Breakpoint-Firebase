@@ -102,4 +102,22 @@ class DataService
             })
     }
     
+    func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [String]) -> ()) //Get an array of all the users from firebase except the current user.
+    {
+        var emailArray = [String]()
+        REF_USERS.observe(.value, with:
+            { (userSnapshot) in
+                guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+                for user in userSnapshot
+                {
+                    let email = user.childSnapshot(forPath: "email").value as! String
+                    if email.contains(query) == true && email != Auth.auth().currentUser?.email
+                    {
+                        emailArray.append(email)
+                    }
+                }
+                handler(emailArray)
+            })
+    }
+    
 }
