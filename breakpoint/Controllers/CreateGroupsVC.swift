@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateGroupsVC: UIViewController
 {
@@ -56,7 +57,26 @@ class CreateGroupsVC: UIViewController
 
     @IBAction func doneBtnWasPressed(_ sender: Any)
     {
-        
+        if titleTextField.text != "" && descriptionTextField.text != ""
+        {
+            DataService.instance.getIDs(forUsernames: chosenUserArray, handler:
+                { (idsArray) in
+                    var userIds = idsArray
+                    userIds.append((Auth.auth().currentUser?.uid)!) //We won't be inside of the current group so we have to append ourselves to the group. So we need to add our UID.
+                    
+                    DataService.instance.createGroup(withTitle: self.titleTextField.text!, andDescription: self.descriptionTextField.text!, forUserUIDs: userIds, handler:
+                        { (groupCreated) in
+                            if groupCreated
+                            {
+                                self.dismiss(animated: true, completion: nil)
+                            }
+                            else
+                            {
+                                print("Group could not be created.")
+                            }
+                        })
+                })
+        }
     }
     
     @IBAction func closeBtnWasPressed(_ sender: Any)
@@ -96,18 +116,18 @@ extension CreateGroupsVC: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         guard let cell = tableView.cellForRow(at: indexPath) as? UserCell else { return }
-        if !chosenUserArray.contains(cell.emailLbl.text!) //If it does not contain the email
+        if !chosenUserArray.contains(cell.emailLbl.text!) //If it does not contain an email we have already selected. This prevents adding the same user twice.
         {
-            chosenUserArray.append(cell.emailLbl.text!)
-            addPeopleToGroupLbl.text = chosenUserArray.joined(separator: ", ")
+            chosenUserArray.append(cell.emailLbl.text!) //Append the cell's text to the chosenUserArray.
+            addPeopleToGroupLbl.text = chosenUserArray.joined(separator: ", ") //Concatenate the values with a ", " seperator
             doneBtn.isHidden = false
         }
-        else
+        else //If they aren't in the array
         {
-            chosenUserArray = chosenUserArray.filter({ $0 != cell.emailLbl.text! }) //Return everyone who does not equal the current user who has been tapped.
-            if chosenUserArray.count >= 1
+            chosenUserArray = chosenUserArray.filter({ $0 != cell.emailLbl.text! }) //We need to remove the selected user from the array. Return everyone who does not equal the current user who has been tapped. The temporary variable $0 is used in the filter which is similar to a for loop.
+            if chosenUserArray.count >= 1 // If there is at least one person
             {
-                addPeopleToGroupLbl.text = chosenUserArray.joined(separator: ", ")
+                addPeopleToGroupLbl.text = chosenUserArray.joined(separator: ", ") //Show the chosenUserArray.
             }
             else
             {
