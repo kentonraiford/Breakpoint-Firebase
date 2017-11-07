@@ -15,6 +15,8 @@ class UserCell: UITableViewCell //The tableViewcell inside og the CreateGroupsVC
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var checkMarkImg: UIImageView!
     
+    var showing = false //A variable we are creating as a boolean check to tell whether or not a cell is selected.
+    
     func configureCell(profileImage image: UIImage, email: String, isSelected: Bool)
     {
         self.profileImg.image = image
@@ -33,7 +35,19 @@ class UserCell: UITableViewCell //The tableViewcell inside og the CreateGroupsVC
     {
         super.setSelected(selected, animated: animated)
 
-        
+        if selected //Tap on the cell.
+        {
+            if showing == false
+            {
+                checkMarkImg.isHidden = false //unhide it
+                showing = true
+            }
+            else
+            {
+                checkMarkImg.isHidden = true //hide it
+                showing = false
+            }
+        }
     }
 
 }
