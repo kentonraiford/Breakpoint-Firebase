@@ -27,7 +27,7 @@ class FeedVC: UIViewController
         
         DataService.instance.getAllFeedMessages //Download all of the messages from Firebase.
             { (returnedMessagesArray) in
-                self.messageArray = returnedMessagesArray //Set the value of our variable array to the values of the messages we get from our getAllFeedMessages function.
+                self.messageArray = returnedMessagesArray.reversed() //Set the value of our variable array to the values of the messages we get from our getAllFeedMessages function. Reverse the messages so the last one appears on top.
                 self.feedTableView.reloadData()
             }
     }
@@ -55,7 +55,11 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource
         let image = UIImage(named: "defaultProfileImage")
         let message = messageArray[indexPath.row] //Pull out all of the messages at each index that we put in from getAllFeedMessages.
         
-        cell.configureCell(profileImg: image!, email: message.senderId, content: message.content)
+        DataService.instance.getUsername(forUID: message.senderId) //We bass in the UID from the message's sender
+        { (returnedUsername) in //The handler is where we get the username back.
+            cell.configureCell(profileImg: image!, email: returnedUsername, content: message.content)
+        }
+        
         return cell
     }
     

@@ -47,6 +47,22 @@ class DataService
         REF_USERS.child(uid).updateChildValues(userData)
     }
     
+    func getUsername(forUID uid: String, handler: @escaping (_ username: String) -> ()) //Convert UID into a username. the handler allows us to let the value of username escape out of this function.
+    {
+        REF_USERS.observeSingleEvent(of: .value, with:
+            { (userSnapshot) in
+                guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return } //If we get nothing back then return nothing so the app does not crash.
+                for user in userSnapshot
+                {
+                    if user.key == uid
+                    {
+                        handler(user.childSnapshot(forPath: "email").value as! String) //Get the email of the passed in user's UID
+                    }
+                }
+                
+            })
+        //Observe the users reference and find the one that matches our current user.
+    }
     
     //Send the feed to firebase.
     func uploadPost(withMessage message: String, forUID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool) -> ())
