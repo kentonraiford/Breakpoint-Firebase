@@ -30,6 +30,8 @@
 		CDE78C421FB043600093E770 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE78C411FB043600093E770 /* MeVC.swift */; };
 		CDE78C441FB048990093E770 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE78C431FB048990093E770 /* CreatePostVC.swift */; };
 		CDE78C461FB04C130093E770 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE78C451FB04C130093E770 /* UIViewExt.swift */; };
+		CDF78F861FB275E900FA3103 /* GroupFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF78F851FB275E900FA3103 /* GroupFeedCell.swift */; };
+		CDF78F881FB2764800FA3103 /* GroupFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF78F871FB2764800FA3103 /* GroupFeedVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		CDE78C411FB043600093E770 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		CDE78C431FB048990093E770 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		CDE78C451FB04C130093E770 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		CDF78F851FB275E900FA3103 /* GroupFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFeedCell.swift; sourceTree = "<group>"; };
+		CDF78F871FB2764800FA3103 /* GroupFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFeedVC.swift; sourceTree = "<group>"; };
 		DA350F0809411259CBE22382 /* Pods_breakpoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_breakpoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,6 +133,7 @@
 				CDE78C411FB043600093E770 /* MeVC.swift */,
 				CDE78C431FB048990093E770 /* CreatePostVC.swift */,
 				CD3477411FB150F8002B9DFF /* CreateGroupsVC.swift */,
+				CDF78F871FB2764800FA3103 /* GroupFeedVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 				CD34773D1FB11539002B9DFF /* FeedCell.swift */,
 				CD3477431FB154AD002B9DFF /* UserCell.swift */,
 				CD3477451FB23812002B9DFF /* GroupCell.swift */,
+				CDF78F851FB275E900FA3103 /* GroupFeedCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,6 +315,8 @@
 				CD3477461FB23812002B9DFF /* GroupCell.swift in Sources */,
 				CDE78C381FB022BD0093E770 /* AuthVC.swift in Sources */,
 				CDCA2EB01FAF85C300D9C52D /* GroupsVC.swift in Sources */,
+				CDF78F881FB2764800FA3103 /* GroupFeedVC.swift in Sources */,
+				CDF78F861FB275E900FA3103 /* GroupFeedCell.swift in Sources */,
 				CDE78C3A1FB022E70093E770 /* LoginVC.swift in Sources */,
 				CDE78C401FB027E40093E770 /* AuthService.swift in Sources */,
 				CD3477421FB150F8002B9DFF /* CreateGroupsVC.swift in Sources */,
