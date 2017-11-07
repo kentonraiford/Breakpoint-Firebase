@@ -47,7 +47,7 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        guard let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell") as? FeedCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as? FeedCell
             else
             {
                 return UITableViewCell() //Return an empty cell if we can't get our cell
