@@ -69,7 +69,8 @@ class DataService
     {
         if groupKey != nil
         {
-            //Send to groups REF
+            REF_GROUPS.child(groupKey!).child("messages").childByAutoId().updateChildValues(["content": message, "senderId": uid]) //Give a random ID because they on't need to be linked to anything.
+            sendComplete(true)
         }
         else //Pass message into feed
         {
@@ -101,6 +102,25 @@ class DataService
                 handler(messageArray) //Download all of our messages and append them into the messageArray and return the messageArray.
             })
     }
+    
+    
+    func getAllMessagesFor(desiredGroup: Group, handler: @escaping (_ messagesArray: [Message]) -> ())
+    { //Returning all of the messages for the specific group we want
+        var groupMessageArray = [Message]()
+        REF_GROUPS.child(desiredGroup.groupKey).child("messages").observeSingleEvent(of: .value, with:
+            { (groupMessageSnapshot) in
+                guard let groupMessageSnapshot = groupMessageSnapshot.children.allObjects as? [DataSnapshot] else { return }
+                for groupMessage in groupMessageSnapshot
+                {
+                    let content = groupMessage.childSnapshot(forPath: "content").value as! String
+                    let senderId = groupMessage.childSnapshot(forPath: "senderId").value as! String
+                    let groupMessage = Message(content: content, senderId: senderId)
+                    groupMessageArray.append(groupMessage)
+                }
+                handler(groupMessageArray)
+            })
+    }
+    
     
     func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [String]) -> ()) //Get an array of all the users from firebase except the current user.
     {
@@ -137,6 +157,27 @@ class DataService
                 handler(idArray) //return the idArray
             })
     }
+    
+    
+    func getEmailsFor(group: Group, handler: @escaping(_ emailsArray: [String]) -> ())
+    {
+        var emailsArray = [String]()
+        REF_USERS.observeSingleEvent(of: .value, with:
+            { (userSnapshot) in
+                guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+                for user in userSnapshot
+                {
+                    if group.groupMembers.contains(user.key)
+                    {
+                        let email = user.childSnapshot(forPath: "email").value as! String
+                        emailsArray.append(email)
+                    }
+                }
+                handler(emailsArray)
+            })
+    }
+    
+    
     
     func createGroup(withTitle title: String, andDescription description: String, forUserUIDs ids: [String], handler: @escaping (_ groupCreated: Bool) -> ())
     {

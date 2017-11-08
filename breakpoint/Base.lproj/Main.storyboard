@@ -257,7 +257,7 @@
         <!--Group FeedVC-->
         <scene sceneID="vAX-mD-QKL">
             <objects>
-                <viewController id="pst-qw-jVX" customClass="GroupFeedVC" customModule="breakpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupFeedVC" id="pst-qw-jVX" customClass="GroupFeedVC" customModule="breakpoint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eIH-9b-MMe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -265,7 +265,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0l-ip-vAU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="_groupTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6W-EZ-ndX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_groupTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6W-EZ-ndX">
                                         <rect key="frame" x="88" y="34.5" width="200" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="2Oe-dO-jZa"/>
@@ -275,7 +275,7 @@
                                         <color key="textColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pU1-BJ-i3H">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pU1-BJ-i3H">
                                         <rect key="frame" x="20" y="34" width="12" height="22"/>
                                         <state key="normal" image="backIcon"/>
                                         <connections>
@@ -290,10 +290,11 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="U7t-1W-EJr"/>
                                     <constraint firstItem="y6W-EZ-ndX" firstAttribute="centerY" secondItem="pU1-BJ-i3H" secondAttribute="centerY" id="cI5-70-Bkl"/>
                                     <constraint firstItem="pU1-BJ-i3H" firstAttribute="leading" secondItem="l0l-ip-vAU" secondAttribute="leading" constant="20" id="myh-So-bNj"/>
+                                    <constraint firstItem="pU1-BJ-i3H" firstAttribute="top" secondItem="l0l-ip-vAU" secondAttribute="top" constant="34" id="rAS-gK-KJm"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YZg-Wy-HTv">
-                                <rect key="frame" x="0.0" y="103" width="375" height="564"/>
+                                <rect key="frame" x="0.0" y="103" width="375" height="504"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.27058823529999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupFeedCell" rowHeight="100" id="BZB-VC-rrZ" customClass="GroupFeedCell" customModule="breakpoint" customModuleProvider="target">
@@ -395,12 +396,12 @@
                             <constraint firstItem="YZg-Wy-HTv" firstAttribute="top" secondItem="Pdo-QN-CIk" secondAttribute="bottom" constant="8" id="0UI-3M-SeY"/>
                             <constraint firstItem="a9e-TW-hyh" firstAttribute="trailing" secondItem="l0l-ip-vAU" secondAttribute="trailing" id="3JE-0r-n1g"/>
                             <constraint firstItem="YZg-Wy-HTv" firstAttribute="top" secondItem="Pdo-QN-CIk" secondAttribute="bottom" constant="8" id="3g6-r0-jZd"/>
+                            <constraint firstItem="HaR-TF-M2A" firstAttribute="top" secondItem="YZg-Wy-HTv" secondAttribute="bottom" id="5Vi-Cq-zK7"/>
                             <constraint firstItem="Pdo-QN-CIk" firstAttribute="leading" secondItem="a9e-TW-hyh" secondAttribute="leading" constant="8" id="IP7-Fv-u8F"/>
                             <constraint firstItem="a9e-TW-hyh" firstAttribute="trailing" secondItem="Pdo-QN-CIk" secondAttribute="trailing" constant="8" id="JQa-ZQ-2cW"/>
                             <constraint firstItem="l0l-ip-vAU" firstAttribute="top" secondItem="eIH-9b-MMe" secondAttribute="top" id="Ld3-oX-t8s"/>
                             <constraint firstItem="Pdo-QN-CIk" firstAttribute="top" secondItem="l0l-ip-vAU" secondAttribute="bottom" constant="8" id="Nio-Eo-fu1"/>
                             <constraint firstItem="l0l-ip-vAU" firstAttribute="leading" secondItem="eIH-9b-MMe" secondAttribute="leading" id="RFs-Ch-pQr"/>
-                            <constraint firstItem="a9e-TW-hyh" firstAttribute="bottom" secondItem="YZg-Wy-HTv" secondAttribute="bottom" id="SI6-jh-6Qh"/>
                             <constraint firstItem="HaR-TF-M2A" firstAttribute="leading" secondItem="a9e-TW-hyh" secondAttribute="leading" id="cV7-nD-8ye"/>
                             <constraint firstItem="YZg-Wy-HTv" firstAttribute="leading" secondItem="a9e-TW-hyh" secondAttribute="leading" id="dRF-i5-dkh"/>
                             <constraint firstItem="YZg-Wy-HTv" firstAttribute="trailing" secondItem="a9e-TW-hyh" secondAttribute="trailing" id="fZz-Yf-FLX"/>
